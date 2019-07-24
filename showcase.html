@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+        analytics.load("CmbDJzM5A62tTkZF4Iopy7pXoeXgHOt8");
+        analytics.page();
+        }}();
+    </script>
+    <style type="text/css" media="all">
+        body {
+            overflow-x: hidden;
+            margin: 0 !important;
+        }
+        
+        body {
+            font-family: "Montserrat", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            --color-text: #000;
+            --color-bg-main: #fff;
+            --color-menu-item: #fff;
+            --color-menu-item-hover: #e0f3ca;
+            --color-bg-menu: #cbf3ee;
+            --color-bg-facts: #000;
+            --color-text-facts: #fff;
+            --color-bg-img: #000;
+            --color-bg-more-1: #fee9b1;
+            --color-bg-more-2: #e0f3ca;
+            --color-bg-more-3: #802829;
+            --color-bg-more-4: #92749b;
+            --color-nav: #ddd;
+            --color-nav-hover: #000;
+            --color-link: #000;
+            --color-link-hover: #333
+        }
+        
+        .js .loading::before {
+            content: '';
+            position: fixed;
+            z-index: 100000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-bg-main)
+        }
+        
+        .js .loading::after {
+            content: '';
+            position: fixed;
+            z-index: 100000;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            margin: -30px 0 0 -30px;
+            pointer-events: none;
+            opacity: 0;
+            background: var(--color-text);
+            animation: loaderAnim .8s ease-in infinite alternate forwards
+        }
+        
+        @keyframes loaderAnim {
+            to {
+                opacity: 1;
+                transform: scale3d(0.5, 0.5, 1) rotate(90deg)
+            }
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--color-link);
+            outline: 0
+        }
+        
+        a:hover,
+        a:focus {
+            color: var(--color-link-hover);
+            outline: 0
+        }
+        
+        .hidden {
+            position: absolute;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            pointer-events: none
+        }
+        
+        button {
+            border: 0;
+            background: none;
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            cursor: pointer;
+            -webkit-appearance: none
+        }
+        
+        button:focus {
+            outline: 0
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            fill: currentColor
+        }
+        
+        .sections__header {
+            padding: 2rem 3rem 0 2rem;
+            display: grid;
+        }
+        
+        .title {
+            text-transform: lowercase;
+            font-size: 1.35rem;
+            margin: 0
+        }
+        
+        .menu {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            z-index: 3000;
+            display: grid;
+            grid-template-columns: 100%;
+            pointer-events: none;
+            align-items: start
+        }
+        
+        .menu::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            right: 0;
+            transition: opacity .3s;
+            pointer-events: none;
+            opacity: 0
+        }
+        
+        .menu--open::before {
+            opacity: 1;
+            pointer-events: auto
+        }
+        
+        .menu__inner {
+            padding: 4rem 2rem 0 0;
+            grid-area: 1 / 1 / 2 / 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            list-style: none;
+            opacity: 1;
+            position: relative;
+            text-align: right
+        }
+        
+        .menu__toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 2.3rem 2rem;
+            display: grid;
+            grid-template: 100% / 100%;
+            pointer-events: auto;
+            cursor: pointer
+        }
+        
+        .menu__toggle-inner {
+            display: block;
+            grid-area: 1 / 1 / 1 / 1
+        }
+        
+        .menu__toggle-inner--close {
+            opacity: 0;
+            color: var(--color-menu-item)
+        }
+        
+        .menu__item {
+            font-size: 2.25rem;
+            margin: 0 0 1.5rem;
+            font-weight: bold;
+            opacity: 0
+        }
+        
+        .menu--open .menu__item {
+            pointer-events: auto
+        }
+        
+        .menu__item-link {
+            color: var(--color-menu-item)
+        }
+        
+        .menu__item-link:hover {
+            color: var(--color-menu-item-hover)
+        }
+        
+        .sections__index,
+        .sections__nav {
+            display: none
+        }
+        
+        .facts {
+            display: none
+        }
+        
+        .section__content {
+            padding: 2rem
+        }
+        
+        .section__title {
+            font-size: 1rem;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            text-transform: none;
+            letter-spacing: 2px
+        }
+        
+        .section__title span {
+            display: inline-block
+        }
+        
+        .section__description {
+            line-height: 1.75;
+            overflow: hidden;
+            position: relative;
+            padding: 0 2rem 0 0;
+            font-weight: 300
+        }
+        
+        .section__description-inner {
+            display: block
+        }
+        
+        .section__img {
+            height: 45vh;
+            pointer-events: none
+        }
+        
+        .section__img-inner {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: 50% 50%
+        }
+        
+        .section__facts {
+            padding: 2rem;
+            margin: 0;
+            list-style: none;
+            background: var(--color-bg-facts);
+            color: var(--color-text-facts)
+        }
+        
+        .section__facts-item {
+            margin: 0 0 2.5rem 0
+        }
+        
+        .section__facts-img {
+            max-width: 200px;
+            border-radius: 5px;
+            display: block;
+            cursor: pointer;
+            margin: 4rem 0 2rem 0;
+            position: relative
+        }
+        
+        .section__facts-img::before,
+        .section__facts-img::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: #2f2f2f;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1
+        }
+        
+        .section__facts-img::before {
+            transform: rotate(3deg)
+        }
+        
+        .section__facts-img::after {
+            transform: rotate(-5deg)
+        }
+        
+        .section__facts-img img {
+            max-width: none;
+            width: 100%
+        }
+        
+        .icon--grid {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: -.75rem 0 0 -.75rem
+        }
+        
+        .section__facts-title {
+            font-size: 1em;
+            margin: 0 0 .5rem
+        }
+        
+        .section__facts-detail {
+            font-weight: 300
+        }
+        
+        .section__facts-item--clickable {
+            display: none
+        }
+        
+        .section__gallery {
+            grid-area: 1 / 4 / 4 / 2;
+            padding: 2rem;
+            display: grid;
+            grid-gap: .75rem;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 2rem 1fr 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+            z-index: 300;
+            pointer-events: none;
+            height: 100vh;
+            background: var(--color-bg-facts)
+        }
+        
+        .section__gallery-item {
+            width: 100%;
+            height: 100%;
+            display: grid
+        }
+        
+        .section__gallery-item--title {
+            grid-area: 1 / 1 / 2 / 3;
+            color: #fff;
+            font-size: 1em;
+            margin: 0
+        }
+        
+        .section__gallery-item img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto 0;
+            display: block
+        }
+        
+        .section__more {
+            display: flex;
+            align-items: stretch;
+            overflow: hidden
+        }
+        
+        .section__more-inner {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem
+        }
+        
+        .section__more-inner--bg1 {
+            background-color: var(--color-bg-more-1)
+        }
+        
+        .section__more-inner--bg2 {
+            background-color: var(--color-bg-more-2)
+        }
+        
+        .section__more-inner--bg3 {
+            background-color: var(--color-bg-more-3)
+        }
+        
+        .section__more-inner--bg4 {
+            background-color: var(--color-bg-more-4)
+        }
+        
+        .section__more-text {
+            font-weight: bold;
+            display: block;
+            margin: 0 0 1rem 0
+        }
+        
+        .section__more-link {
+            display: flex;
+            cursor: pointer;
+            font-weight: 300
+        }
+        
+        .section__more-linktext {
+            margin: 0 .5rem 0 0;
+            line-height: 1
+        }
+        
+        .icon--arrowlong {
+            width: 2rem;
+            height: 1.25rem
+        }
+        
+        @media screen and (min-width:55em) and (min-height:40em) {
+            .sections {
+                height: 100vh;
+                overflow: hidden;
+                display: grid;
+                grid-template-columns: 45% 55%;
+                grid-template-rows: 6rem calc(30% - 2rem) calc(44% - 2rem) calc(26% - 2rem);
+                grid-template-areas: "header expander" "sections-index expander" "... expander" "sections-nav expander"
+            }
+            .sections--factsopen {
+                opacity: 0;
+                pointer-events: none
+            }
+            .menu {
+                grid-template-columns: 47% 53%
+            }
+            .menu__toggle {
+                right: 53%;
+                margin: 2.3rem 4rem 0 0
+            }
+            .menu__inner {
+                padding: 4rem 4rem 0 0
+            }
+            .facts {
+                position: relative;
+                grid-area: expander;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                pointer-events: none;
+                z-index: 200
+            }
+            .facts__toggle {
+                font-weight: bold;
+                cursor: pointer;
+                width: 48%;
+                padding: 0 0 0 5vw;
+                margin: 0 0 0 2vw;
+                height: 5rem;
+                position: relative;
+                display: grid;
+                grid-template: 100% / 100%;
+                color: var(--color-text-facts);
+                pointer-events: auto
+            }
+            .facts__toggle:hover {
+                opacity: .6
+            }
+            .facts__toggle-inner {
+                text-transform: uppercase;
+                font-size: .6rem;
+                letter-spacing: .25rem;
+                grid-area: 1 / 1 / 1 / 1;
+                display: flex
+            }
+            .facts__toggle-inner--less {
+                opacity: 0
+            }
+            .facts__toggle-text {
+                line-height: 1.75;
+                margin: 0 0 0 .25rem
+            }
+            .button-contentclose {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 2rem;
+                opacity: 0;
+                pointer-events: none;
+                color: var(--color-text-facts)
+            }
+            .sections__header {
+                grid-area: header
+            }
+            .sections__index {
+                font-weight: bold;
+                font-size: .75rem;
+                display: block;
+                align-self: end;
+                padding: 0 4rem 3rem 20%;
+                grid-area: sections-index;
+                display: flex;
+                z-index: 1
+            }
+            .sections__index-current {
+                position: relative;
+                overflow: hidden
+            }
+            .sections__index-total {
+                position: relative;
+                margin: 0 0 0 8rem
+            }
+            .sections__index-total::after {
+                content: '';
+                position: absolute;
+                width: 6rem;
+                height: 3px;
+                top: calc(50% - 1.5px);
+                right: calc(100% + 1rem);
+                background: #000
+            }
+            .sections__index-inner {
+                display: block;
+                width: 1.15rem
+            }
+            .sections__nav {
+                display: block;
+                grid-area: sections-nav;
+                z-index: 5;
+                padding: 2rem 4rem 0;
+                background: linear-gradient(0deg, #fff 90%, rgba(255, 255, 255, 0))
+            }
+            .sections__nav-item {
+                border: 2px solid var(--color-nav);
+                border-radius: 50%;
+                width: 3rem;
+                height: 3rem;
+                background: var(--color-bg-main)
+            }
+            .sections__nav-item:hover {
+                border-color: var(--color-nav-hover)
+            }
+            .sections__nav-item .icon {
+                width: 100%;
+                height: 100%
+            }
+            .section {
+                pointer-events: none;
+                grid-area: 1 / 1 / 5 / 4;
+                display: grid;
+                grid-template-columns: 47% 25% 28%;
+                grid-template-rows: 39% 39% 22%;
+                grid-template-areas: "... slide-image slide-image" "slide-content slide-image slide-image" "... ... more"
+            }
+            .section--current {
+                pointer-events: auto
+            }
+            .section__content {
+                padding: 0 4rem;
+                grid-area: slide-content
+            }
+            .section__expander {
+                grid-area: 1 / 2 / 4 / 4;
+                background: var(--color-bg-facts);
+                transform-origin: 0 0;
+                left: -2vw;
+                position: relative;
+                z-index: 100
+            }
+            .section__img {
+                height: auto;
+                grid-area: slide-image;
+                overflow: hidden;
+                z-index: 99
+            }
+            .section:fist-of-type .section__img {
+                background: var(--color-bg-img)
+            }
+            .section__facts-item--clickable {
+                display: block
+            }
+            .section__gallery {
+                grid-template-columns: repeat(2, calc(200px + 2rem));
+                grid-gap: 1rem;
+                padding: 10vh 5vw;
+                background: transparent;
+                position: relative
+            }
+            .section__gallery-item {
+                padding: 0 0 0 1rem;
+                opacity: 0
+            }
+            .section__more {
+                grid-area: more
+            }
+            .section__facts {
+                padding: 10vh 5vw;
+                pointer-events: none;
+                background: transparent;
+                position: relative;
+                z-index: 200;
+                grid-area: 1 / 2 / 4 / 3
+            }
+            .section__facts-detail {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis
+            }
+            .section__more-inner {
+                padding: 0
+            }
+            .sections--factsopen .sections__nav,
+            .sections--factsopen .section__facts-item--clickable .section__facts-img,
+            .sections--factsopen .facts__toggle {
+                pointer-events: none
+            }
+            .sections--factsopen .button-contentclose,
+            .section--current .section__facts-item--clickable,
+            .sections--factsopen .section__gallery-item {
+                pointer-events: auto
+            }
+            .js .section:not(.section--current) {
+                pointer-events: none
+            }
+            .js .section:not(.section--current) .section__title span,
+            .js .section:not(.section--current) .section__description,
+            .js .section:not(.section--current) .section__img-inner,
+            .js .section:not(.section--current) .section__more-inner,
+            .js .section:not(.section--current) .section__more-text,
+            .js .section:not(.section--current) .section__more-link,
+            .js .section:not(.section--current) .section__facts-item {
+                opacity: 0
+            }
+        }
+        
+        @media screen and (max-width:54.9em),
+        screen and (max-height:39.9em) {
+            .js .section__title span,
+            .js .section__description,
+            .js .section__img-inner,
+            .js .section__more-inner,
+            .js .section__more-text,
+            .js .section__more-link,
+            .js .section__facts-item,
+            .js .section__gallery-item {
+                opacity: 1 !important;
+                transform: none !important
+            }
+            .icon {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                border: 2px solid;
+                padding: .5rem
+            }
+        }
+        
+        body {
+            --color-text: #000;
+            --color-bg-main: #fff;
+            --color-menu-item: #fff;
+            --color-menu-item-hover: #e0f3ca;
+            --color-bg-menu: #cbf3ee;
+            --color-bg-facts: #000;
+            --color-text-facts: #fff;
+            --color-bg-img: #000;
+            --color-bg-more-1: #00adef;
+            --color-bg-more-2: #24b574;
+            --color-bg-more-3: #8d7995;
+            --color-bg-more-4: #cacaf3;
+            --color-nav: #ddd;
+            --color-nav-hover: #000;
+            --color-link: #000;
+            --color-link-hover: #333
+        }
+        
+        .sections__header {
+            padding: 4rem
+        }
+        
+        .section__facts-img {
+            max-width: 200px;
+            max-height: 60px;
+            overflow: hidden;
+            margin: -1rem 0 2rem 0
+        }
+        .logo {
+            background-image: url("./images/logo.jpg");
+            mix-blend-mode: darken;
+            min-height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #strakeanimation{
+            background-color:#fff;
+            width:100%;
+            height:100%;
+            display:block;
+            overflow: hidden;
+            transform: translate3d(0,0,0);
+            text-align: center;
+            opacity: 1;
+        }
+    </style>
+    <title>Showcase - Eben Mallory</title>
+</head>
+
+<body class="page-template page-template-page-templates page-template-Outdoortheme page-template-page-templatesOutdoortheme-php page page-id-133 wp-custom-logo">
+    <div class="hfeed site" id="page">
+        <script>
+            document.documentElement.className = "js";
+            var supportsCssVars = function() {
+                var e, t = document.createElement("style");
+                return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+            };
+            supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+        </script>
+        <svg class="hidden">
+            <symbol id="icon-arrow" viewBox="0 0 24 24">
+                <title>arrow</title>
+                <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "></polygon>
+            </symbol>
+            <symbol id="icon-drop" viewBox="0 0 24 24">
+                <title>drop</title>
+                <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"></path>
+                <path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"></path>
+            </symbol>
+            <symbol id="icon-menu" viewBox="0 0 24 13">
+                <title>menu</title>
+                <path d="M.75 1.515h22.498a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5zM23.248 5.265H8.168a.75.75 0 0 0 0 1.5h15.08a.75.75 0 0 0 0-1.5zM23.248 10.514H4.322a.75.75 0 0 0 0 1.5h18.926a.75.75 0 0 0 0-1.5z"></path>
+            </symbol>
+            <symbol id="icon-dot" viewBox="0 0 24 24">
+                <title>dot</title>
+                <path d="M11.5 9c-.69 0-1.28.244-1.768.732A2.41 2.41 0 0 0 9 11.5c0 .69.244 1.28.732 1.767A2.409 2.409 0 0 0 11.5 14c.69 0 1.28-.244 1.768-.733A2.408 2.408 0 0 0 14 11.5c0-.69-.244-1.28-.732-1.768A2.408 2.408 0 0 0 11.5 9z"></path>
+            </symbol>
+            <symbol id="icon-cross" viewBox="0 0 24 24">
+                <title>cross</title>
+                <path d="M11.449 11.962l-5.1 5.099a.363.363 0 1 0 .513.512L12 12.436l5.137 5.137a.361.361 0 0 0 .513 0 .363.363 0 0 0 0-.512l-5.099-5.1 5.102-5.102a.363.363 0 1 0-.512-.513L12 11.487l-5.141-5.14a.363.363 0 0 0-.513.512l5.103 5.103z"></path>
+            </symbol>
+            <symbol id="icon-arrowlong" viewBox="0 0 32 11">
+                <title>arrow-long</title>
+                <path d="M27.166.183a.619.619 0 0 0-.878 0 .619.619 0 0 0 0 .878l2.735 2.735H.768a.624.624 0 0 0 0 1.248h28.254L26.287 7.77a.619.619 0 0 0 0 .878.617.617 0 0 0 .441.183c.163 0 .32-.061.442-.183l3.796-3.796a.623.623 0 0 0-.005-.878L27.166.183z"></path>
+            </symbol>
+            <symbol id="icon-close" viewBox="0 0 24 24">
+                <title>close</title>
+                <path d="M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z"></path>
+            </symbol>
+            <symbol id="icon-navup" viewBox="0 0 50 50">
+                <title>navup</title>
+                <path d="M20.259 28.211l5.07-5.03 5.075 5.034a.36.36 0 0 0 .51 0 .356.356 0 0 0 0-.506l-5.323-5.28a.404.404 0 0 0-.135-.084.364.364 0 0 0-.384.08l-5.324 5.28a.356.356 0 0 0 0 .506c.141.14.37.14.51 0z"></path>
+            </symbol>
+            <symbol id="icon-navdown" viewBox="0 0 50 50">
+                <title>navdown</title>
+                <path d="M20.259 22.43l5.07 5.03 5.075-5.034a.36.36 0 0 1 .51 0c.14.14.14.366 0 .506l-5.323 5.28a.404.404 0 0 1-.135.084.364.364 0 0 1-.384-.081l-5.324-5.28a.356.356 0 0 1 0-.505c.141-.14.37-.14.51 0z"></path>
+            </symbol>
+            <symbol id="icon-grid" viewBox="0 0 24 24">
+                <title>grid</title>
+                <path d="M8.982 8.982h5.988v5.988H8.982zM0 0h5.988v5.988H0zM8.982 17.965h5.988v5.988H8.982zM0 8.982h5.988v5.988H0zM0 17.965h5.988v5.988H0zM17.965 0h5.988v5.988h-5.988zM8.982 0h5.988v5.988H8.982zM17.965 8.982h5.988v5.988h-5.988zM17.965 17.965h5.988v5.988h-5.988z"></path>
+            </symbol>
+        </svg>
+        <main>
+            <div class="sections">
+                <header class="sections__header">
+                    <a href="/index.html"><div class="logo"></div></a><br>
+                    <h1 class="title" style="text-transform: none">Work Showcase</h1>
+                    </header>
+                <div class="facts">
+                    <div class="facts__toggle"> <span class="facts__toggle-inner facts__toggle-inner--more"> <svg class="icon icon--dot"><use xlink:href="#icon-dot"></use></svg> <span class="facts__toggle-text">Expand overly upwards</span> </span> <span class="facts__toggle-inner facts__toggle-inner--less"> <svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg> <span class="facts__toggle-text">Collapse overlay</span> </span>
+                    </div>
+                    <button class="button-contentclose">
+                        <svg class="icon icon--close">
+                            <use xlink:href="#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="sections__index"> <span class="sections__index-current"> <span class="sections__index-inner">01</span> </span> <span class="sections__index-total">04</span></div>
+                <nav class="sections__nav">
+                    <button class="sections__nav-item sections__nav-item--prev">
+                        <svg class="icon icon--navup">
+                            <use xlink:href="#icon-navup"></use>
+                        </svg>
+                    </button>
+                    <button class="sections__nav-item sections__nav-item--next">
+                        <svg class="icon icon--navdown">
+                            <use xlink:href="#icon-navdown"></use>
+                        </svg>
+                    </button>
+                </nav>
+                <section class="section section--current">
+                    <div class="section__content">
+                        <h2 class="section__title"><span class="char1">L</span><span class="char2">e</span><span class="char3">x</span><span class="char4">y</span></h2>
+                        <p class="section__description"><span class="section__description-inner">Front end development project - the client requested a smooth transition animation of a serious amount of designed svg bubbles saying "hello" in various different languages. Request Animation Frame came to the rescue, and with a bit of guidance I was able to hand animate specific start and end coordinates for each one falling into place (with the animation being driven by mouse scrolling). Nǐ hǎo!</span></p>
+                    </div>
+                    <div class="section__img">
+                        <div class="section__img-inner" style="background-image: url(./images/showcase/lexy-laptop.jpg"></div>
+                    </div>
+                    <div class="section__more">
+                        <div class="section__more-inner section__more-inner--bg1"> <span class="section__more-text">Let's work together</span>
+                            <a href="/about.html#contact-form" class="section__more-link">
+                                <svg class="icon icon--arrowlong">
+                                    <use xlink:href="#icon-arrowlong"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section__expander" style="transform: scale3d(0.54, 1, 1) translate3d(0px, 573.6px, 0px);"></div>
+                    <ul class="section__facts">
+                            <li class="section__facts-item" style="transform: translate3d(0px, 573.6px, 0px);">
+                            <h3 class="section__facts-title">Technology used:</h3> <span class="section__facts-detail">Request Animation Frame, Webflow
+                                </span></li>
+                        <li class="section__facts-item" style="transform: translate3d(0px, 573.6px, 0px); opacity: 1;"></li>
+                        <!-- <li class="section__facts-item section__facts-item--clickable" data-gallery="gallery1" style="transform: translate3d(0px, 573.6px, 0px); opacity: 1;">
+                            <div class="section__facts-img"> <img src="images/showcase/lexy-iphone-portrait.jpg" alt="">
+                                <svg class="icon icon--grid">
+                                    <use xlink:href="#icon-grid"></use>
+                                </svg>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <!-- <div class="section__gallery" id="gallery1">
+                        <h3 class="section__gallery-item section__gallery-item--title">More Views</h3>
+                        <a class="section__gallery-item" href="#"><img src="images/showcase/lexy-iphone-portrait.jpg" alt=""></a>
+                        <a class="section__gallery-item" href="#"><img src="images/showcase/lexy-laptop.jpg" alt=""></a>
+                    </div> -->
+                </section>
+                <section class="section">
+                    <div class="section__content">
+                        <h2 class="section__title"><span class="char1">T</span><span class="char2">r</span><span class="char3">a</span><span class="char4">n</span><span class="char5">s</span><span class="char6">f</span><span class="char7">o</span><span class="char8">r</span><span class="char9">m</span><span class="char10">a</span><span class="char11">t</span><span class="char12">i</span><span class="char13">o</span><span class="char14">n</span><span class="char15">_</span><span class="char16">C</span><span class="char17">o</span><span class="char18">m</span><span class="char19">p</span><span class="char20">a</span><span class="char21">n</span><span class="char22">y</span></h2>
+                        <p class="section__description"><span class="section__description-inner">Chuck Kocher is an amazing business coach in the Colorado Springs area. I was invited down to his office to check out in person what he does, and I got to pick up a lot of information tidbits along the way for how business growth and scaling work.
+We kicked off the website re-design with a bit of planning and UX demos to get some client feedback and a sense of priorities for the information we wanted to convey.</span></p>
+                    </div>
+                    <div class="section__img">
+                        <div class="section__img-inner" style="background-image: url(./images/showcase/TC-desktop.jpg"></div>
+                    </div>
+                    <div class="section__more">
+                        <div class="section__more-inner section__more-inner--bg2"> <span class="section__more-text">Let's work together</span>
+                            <a href="/about.html#contact-form" class="section__more-link">
+                                <svg class="icon icon--arrowlong">
+                                    <use xlink:href="#icon-arrowlong"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section__expander" style="transform: scale3d(0.54, 1, 1) translate3d(0px, 573.6px, 0px);"></div>
+                    <ul class="section__facts">
+                        <li class="section__facts-item" style="transform: translate3d(0px, 573.6px, 0px);">
+                            <h3 class="section__facts-title">Technology used:</h3> <span class="section__facts-detail">Wordpress, UIKit, InfusionSoft</span></li>
+                        <!-- <li class="section__facts-item section__facts-item--clickable d-none" data-gallery="gallery2" style="transform: translate3d(0px, 573.6px, 0px);">
+                            <div class="section__facts-img"> <img src="images/showcase/thumb2.jpg" alt="Some image">
+                                <svg class="icon icon--grid">
+                                    <use xlink:href="#icon-grid"></use>
+                                </svg>
+                            </div>
+                            <h3 class="section__facts-title">More screenshots</h3> <span class="section__facts-detail d-none">A collection of images</span></li> -->
+                    </ul>
+                    <!-- <div class="section__gallery" id="gallery2">
+                        <h3 class="section__gallery-item section__gallery-item--title">More screenshots</h3>
+                        <a class="section__gallery-item" href="#"><img src="images/showcase/thumb5.jpg" alt="Some image"></a>
+                    </div> -->
+                </section>
+                <section class="section">
+                    <div class="section__content">
+                        <h2 class="section__title"><span class="char1">A</span><span class="char2">P</span><span class="char3">M</span></h2>
+                        <p class="section__description"><span class="section__description-inner">Aircraft Performance Modifications (APM) needed a performant, responsive mobile friendly way to showcase their animation explaining the physics behind wind forces and how strakes work on Cessna planes.</span></p>
+                    </div>
+                    <div class="section__img">
+                        <div class="section__img-inner" style="background-color: #f7f7f7;">
+                                <div id="strakeanimation"></div>
+                        </div>
+                    </div>
+                    <div class="section__more">
+                        <div class="section__more-inner section__more-inner--bg3" style="background:#802829;"> <span class="section__more-text">Let's talk</span>
+                            <a href="/about.html#contact-form" class="section__more-link">
+                                <svg class="icon icon--arrowlong">
+                                    <use xlink:href="#icon-arrowlong"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section__expander" style="transform: scale3d(0.54, 1, 1) translate3d(0px, 573.6px, 0px);"></div>
+                    <ul class="section__facts">
+                        <li class="section__facts-item" style="transform: translate3d(0px, 573.6px, 0px);">
+                            <h3 class="section__facts-title">Core technology:</h3> <span class="section__facts-detail">After Effects and Javascript/SVG</span></li>
+                    </ul>
+                </section>
+                <section class="section">
+                    <div class="section__content">
+                        <h2 class="section__title"><span class="char1">C</span><span class="char2">o</span><span class="char3">m</span><span class="char4">i</span><span class="char5">n</span><span class="char6">g</span><span class="char7">_</span><span class="char8">S</span><span class="char9">o</span><span class="char10">o</span><span class="char11">n</span></h2>
+                        <p class="section__description"><span class="section__description-inner">Let's kick off a project together! Give me a call or send over a project request today via our contact form.</span></p>
+                    </div>
+                    <div class="section__img">
+                        <div class="section__img-inner" style="background-image: url(./images/showcase/notebook.jpg"></div>
+                    </div>
+                    <div class="section__more">
+                        <div class="section__more-inner section__more-inner--bg4" style="background: #92749b;"> <span class="section__more-text">Let's talk</span>
+                            <a href="/about.html#contact-form" class="section__more-link">
+                                <svg class="icon icon--arrowlong">
+                                    <use xlink:href="#icon-arrowlong"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section__expander" style="transform: scale3d(0.54, 1, 1) translate3d(0px, 573.6px, 0px);"></div>
+                    <ul class="section__facts">
+                        <li class="section__facts-item" style="transform: translate3d(0px, 573.6px, 0px);">
+                            <h3 class="section__facts-title">Core technology:</h3> <span class="section__facts-detail">Wordpress or NodeJS</span></li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+        <script type="text/javascript" defer="" src="./images/showcase/autoptimize_77ffbea8a8ab81ed4a4764a8cec77c9d.js"></script>
+        <script src="./images/showcase/js/bodymovin.js" type="text/javascript"></script>
+        <script src="./images/showcase/js/animation.js" type="text/javascript"></script>
+    </div>
+</body>
+
+</html>

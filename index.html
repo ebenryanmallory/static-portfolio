@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Eben Mallory portfolio</title>
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="xXn6KmI4ppqsdVJuEf_GDG_HHFgNEsYf5UND0SmEQpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Eben Mallory">
+    <meta name="description" content="Promotional portfolio website">
+    <meta http-equiv="content-language" content="en-us">
+
+    <!--[if lte IE 8]><script src='{{ .Site.BaseURL }}js/ie/html5shiv.js'></script><![endif]-->
+    <link rel="stylesheet" href="./css/main.css">
+    <!--[if lte IE 8]><link rel='stylesheet' href='{{ .Site.BaseURL }}/css/ie8.css' /><![endif]-->
+    <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+        analytics.load("CmbDJzM5A62tTkZF4Iopy7pXoeXgHOt8");
+        analytics.page();
+        }}();
+    </script>
+    <style>
+        @keyframes colorshift {
+            0%   {background-color: #fdfdfd;}
+            20%  {background-color: #e6ebec;}
+            40%  {background-color: #f7f4f2;}
+            60%  {background-color: #edf7ff;}
+            80%  {background-color: #ebebf5;}
+            100% {background-color: #fdfdfd;}
+        }
+        #logo {
+            width: 180px;
+            margin: auto;
+            mix-blend-mode: darken;
+            z-index: 2;
+        }
+        .fullscreen {
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            background-color:#fdfdfd;
+            animation: colorshift 40s linear infinite;
+        }
+        .nav {
+            position: absolute;
+            margin-top: 90vh;
+            text-align: center;
+            width: 100vw;
+        }
+        .nav a {
+            font-size: 1rem !important;
+        }
+        #rightClickMenu {
+            display: none; 
+            position:absolute; 
+            background: #f7f7f7; 
+            height: 250px; 
+            width: 200px;
+            z-index: 1;
+            padding: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+
+<body id="top" class="body">
+    <!-- Header -->
+
+    <div class="fullscreen" onmousedown="rightClickMenu(event)">
+        <img src="/images/logo.jpg" id="logo" />
+        <div id="rightClickMenu">
+            <a href="/about.html">About page</a>
+            <br />
+            <a href="/images/resume.pdf" target="_blank">Resume</a>
+            <br />
+            <a href="/showcase.html">Work Showcase</a>
+        </div>
+        <div class="nav">
+            <a href="/about.html">See about section ⇒</a>
+        </div>
+    </div>
+
+<script>
+    function rightClickMenu(event) {
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        var x = event.clientX;
+        var y = event.clientY;
+        if (event.button == 2) {
+            document.querySelector('#rightClickMenu').style.display = "block";
+            document.querySelector('#rightClickMenu').style.opacity = "1";
+            document.querySelector('#rightClickMenu').style.top = y + "px";
+            document.querySelector('#rightClickMenu').style.left = x + "px";
+        }
+        if (event.button == 0) { document.querySelector('#rightClickMenu').style.opacity = "0"; }
+    }
+</script>
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-104998295-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async="" src="//www.google-analytics.com/analytics.js"></script>
+
+</body>
+</html>

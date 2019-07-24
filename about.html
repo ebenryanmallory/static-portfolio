@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Eben Mallory portfolio</title>
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="xXn6KmI4ppqsdVJuEf_GDG_HHFgNEsYf5UND0SmEQpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Eben Mallory">
+    <meta name="description" content="Promotional portfolio website">
+    <meta http-equiv="content-language" content="en-us">
+
+    <!--[if lte IE 8]><script src='{{ .Site.BaseURL }}js/ie/html5shiv.js'></script><![endif]-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!--[if lte IE 8]><link rel='stylesheet' href='{{ .Site.BaseURL }}/css/ie8.css' /><![endif]-->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+          heap.load("1405911110");
+    </script>
+    <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+        analytics.load("CmbDJzM5A62tTkZF4Iopy7pXoeXgHOt8");
+        analytics.page();
+        }}();
+    </script>
+</head>
+
+<body id="top" class="">
+    <!-- Header -->
+<header id="header">
+    <a href="/index.html"><div class="logo"></div></a>
+    <div class="image avatar"><img src="./images/portrait.jpg" alt="portrait image"></div>
+
+    <h1>Hello! Welcome to my portfolio</h1>
+
+    <nav id="sidebar">
+            <a href="/showcase.html">Work Showcase</a><br />
+            <a href="./images/resume.pdf" target="_blank">View Resume PDF</a>
+
+    </nav>
+
+</header>
+
+
+    <!-- Main -->
+    <div id="main">
+        
+
+    <section>
+<header class="major">
+    <h2>Front end and animation design portfolio</h2>
+</header>
+<p>Side projects, personality and interest pieces, and all around weirdness</p>
+</section>
+
+
+
+
+    <!-- portfolio -->
+<style>
+
+.thumbrow > .column {
+padding: 0 8px;
+}
+
+.thumbrow:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.thumbcolumn {
+float: left;
+width: 25%;
+}
+
+
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+padding-top: 100px;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: black;
+}
+
+
+.modal-content {
+position: relative;
+background-color: #fefefe;
+margin: auto;
+padding: 0;
+width: 90%;
+max-width: 1200px;
+}
+
+
+.close {
+color: white;
+position: absolute;
+top: 10px;
+right: 25px;
+font-size: 35px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #999;
+text-decoration: none;
+cursor: pointer;
+}
+
+.mySlides {
+display: none;
+}
+
+.cursor {
+cursor: pointer
+}
+
+
+.prev,
+.next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -50px;
+color: white;
+font-weight: bold;
+font-size: 20px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+-webkit-user-select: none;
+}
+
+
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover,
+.next:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+
+img {
+margin-bottom: -4px;
+}
+
+.caption-container {
+text-align: center;
+background-color: black;
+padding: 2px 16px;
+color: white;
+}
+
+.demo {
+opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+opacity: 1;
+}
+
+img.hover-shadow {
+transition: 0.3s
+}
+
+.hover-shadow:hover {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+</style>
+
+<section>
+<h2>Select Work</h2>
+<div class="row">
+    
+    <article class="6u 12u$(xsmall)">
+            <div class="row">
+                    <div class="column">
+                      <img src="./images/thumbs/cat-thumb.jpg" style="width:100%" id="IAMS" class="hover-shadow cursor">
+                    </div>
+                  </div>
+
+        <div id="1" class="modal">
+            <span id="closeIAMS" class="close cursor">×</span>
+            <div class="modal-content">
+          
+              <div class="mySlides" style="display: block;">
+                <div class="numbertext">1 / 3</div>
+                <img src="./images/fulls/cat.jpg" style="width:100%">
+              </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="./images/fulls/dog.jpg" style="width:100%">
+                </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+          
+          
+              <div class="thumbcolumn">
+                <img class="demo cursor active" src="./images/fulls/cat.jpg" style="width:100%" onclick="plusSlides(-1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/dog.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+            </div>
+          </div>
+
+        <h3>Iams Ad School student project</h3>
+        <p>Healthy diet = healthy fur.</p>
+    </article>
+    
+    <article class="6u 12u$(xsmall)">
+            <div class="row">
+                    <div class="column">
+                      <img src="./images/thumbs/mcdonalds-thumb.jpg" style="width:100%" id="MCD" class="hover-shadow cursor">
+                    </div>
+                  </div>
+
+        <div id="2" class="modal">
+            <span id="closeMCD" class="close cursor">×</span>
+            <div class="modal-content">
+          
+              <div class="mySlides" style="display: none;">
+                <div class="numbertext">1 / 9</div>
+                <img src="./images/fulls/1.jpg" style="width:100%">
+              </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">2 / 9</div>
+                    <img src="./images/fulls/2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">3 / 9</div>
+                    <img src="./images/fulls/3.jpg" style="width:100%">
+                </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">4 / 9</div>
+                    <img src="./images/fulls/4.jpg" style="width:100%">
+                </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">5 / 9</div>
+                    <img src="./images/fulls/5.jpg" style="width:100%">
+                </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">6 / 9</div>
+                    <img src="./images/fulls/6.jpg" style="width:100%">
+                </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">7 / 9</div>
+                    <img src="./images/fulls/7.jpg" style="width:100%">
+                </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">8 / 9</div>
+                    <img src="./images/fulls/8.jpg" style="width:100%">
+                </div>
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">9 / 9</div>
+                    <img src="./fulls/9.jpg" style="width:100%">
+                </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+          
+          
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/1.jpg" style="width:100%" onclick="plusSlides(-1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/2.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/3.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/4.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/5.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/6.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/7.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/8.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/9.jpg" style="width:100%" onclick="plusSlides(1)">
+              </div>
+            </div>
+          </div>
+
+        <h3>McDonald’s Ad School project</h3>
+        <p>International D&amp;AD student award winner</p>
+    </article>
+    
+    <article class="6u 12u$(xsmall)">
+            <div class="row">
+                    <div class="column">
+                      <img src="./images/thumbs/nami-bottle-thumb.jpg" style="width:100%" id="Nami" class="hover-shadow cursor">
+                    </div>
+                  </div>
+
+        <div id="3" class="modal">
+            <span id="closeNami" class="close cursor">×</span>
+            <div class="modal-content">
+          
+              <div class="mySlides" style="display: none;">
+                <div class="numbertext">1 / 1</div>
+                <img src="./images/fulls/nami-bottle.jpg" style="width:100%">
+              </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+          
+          
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/nami-bottle.jpg" style="width:100%" onclick="plusSlides(-1)">
+              </div>
+            </div>
+          </div>
+
+        <h3>Nami in a bottle</h3>
+        <p>3D render inspired by (and stolen from) the popular video game League of Legends.</p>
+    </article>
+    
+    <article class="6u 12u$(xsmall)">
+            <div class="row">
+                    <div class="column">
+                      <img src="./images/thumbs/bard-thumbnail.jpg" style="width:100%" id="Bard" class="hover-shadow cursor">
+                    </div>
+                  </div>
+
+        <div id="4" class="modal">
+            <span id="closeBard" class="close cursor">×</span>
+            <div class="modal-content">
+          
+              <div class="mySlides" style="display: none;">
+                <div class="numbertext">1 / 1</div>
+                <img src="./images/fulls/bard.jpg" style="width:100%">
+              </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+          
+          
+              <div class="thumbcolumn">
+                <img class="demo cursor" src="./images/fulls/bard.jpg" style="width:100%" onclick="plusSlides(-1)">
+              </div>
+            </div>
+          </div>
+
+        <h3>Bard</h3>
+        <p>3D render of the character Bard from League of Legends.</p>
+    </article>
+    
+</div>
+</section>
+
+<script>
+    document.getElementById("IAMS").onclick = function() {portfolio1();currentSlide(1)};
+    
+    function portfolio1() {
+        document.getElementById("1").style.display = "block";
+    }
+
+    document.getElementById("MCD").onclick = function() {portfolio2();currentSlide(3)};
+    
+    function portfolio2() {
+        document.getElementById("2").style.display = "block";
+    }
+
+    document.getElementById("Nami").onclick = function() {portfolio3();currentSlide(12)};
+    
+    function portfolio3() {
+        document.getElementById("3").style.display = "block";
+    }
+
+    document.getElementById("Bard").onclick = function() {portfolio4();currentSlide(13)};
+    
+    function portfolio4() {
+        document.getElementById("4").style.display = "block";
+    }
+    document.querySelector("#closeIAMS").onclick = function() {closeIAMS()};
+    
+    function closeIAMS() {
+        document.getElementById('1').style.display = "none";
+    }
+    document.querySelector("#closeMCD").onclick = function() {closeMCD()};
+    
+    function closeMCD() {
+        document.getElementById('2').style.display = "none";
+    }
+    document.querySelector("#closeNami").onclick = function() {closeNami()};
+    
+    function closeNami() {
+        document.getElementById('3').style.display = "none";
+    }
+    document.querySelector("#closeBard").onclick = function() {closeBard()};
+    
+    function closeBard() {
+        document.getElementById('4').style.display = "none";
+    }
+</script>
+
+<script>
+
+function IAMS() {
+document.getElementById('1').style.display = "block";
+}
+function MCD() {
+document.getElementById('2').style.display = "block";
+}
+function Nami() {
+document.getElementById('3').style.display = "block";
+}
+function Bard() {
+document.getElementById('4').style.display = "block";
+}
+function closeModal() {
+document.querySelector(".modal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+
+
+<section>
+
+    <h2>Personal projects and works in progress:</h2>
+
+
+    <div class="row">
+    <br />
+        <ul class="recent-posts">
+
+            <li><a href="https://codepen.io/ebenryanmallory/full/QrXEEE/" target="_blank">D3 bar chart on public United States GDP</a></li>
+
+            <li><a href="https://codepen.io/ebenryanmallory/full/ejeROP/" target="_blank">Pomodoro clock built in React JS</a></li>
+
+            <li><a href="http://storrei-20181204141103--hostingbucket.s3-website-us-east-1.amazonaws.com/" target="_blank">React To-do App</a></li>
+
+            <li><a href="http://movie-discover-app.s3-website-us-west-1.amazonaws.com/" target="_blank">MovieDB Discover App built in React</a>
+            <br />
+            Built in React and rendered server side using Node ensures that the app is SEO friendly because it comes down from the server as a string of HTML.
+            </li>
+
+        </ul>
+    </div>
+</section>
+
+
+
+    
+<section>
+
+    <h2>REACH OUT</h2>
+    <p>Business inquiries are more than welcome</p>
+
+    <div class="row" id="contact-form">
+        
+        <div class="8u 12u$(small)">
+            <form action="//formspree.io/ebenryanmallory@gmail.com" method="POST">
+                <div class="row uniform 50%">
+                    <input type="hidden" name="_subject" value="New email from your portfolio">
+                    <input type="hidden" name="_next" value="https://ebenmallory.com/about">
+                    <div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" required=""></div>
+                    <div class="6u$ 12u$(xsmall)"><input type="email" name="_replyto" id="email" placeholder="Email" required=""></div>
+                    <div class="12u$"><textarea name="message" id="message" placeholder="Message" rows="4" required=""></textarea></div>
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <ul class="actions">
+                        <li><input type="submit" value="Send message"></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</section>
+
+
+
+    </div>
+
+    <!-- Footer -->
+<footer id="footer">
+<ul class="icons">
+    
+    <li><a href="//github.com/ebenryanmallory" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+    
+    <li><a href="https://www.linkedin.com/in/eben-mallory/" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+    
+    <li><a href="/about.html#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+    
+</ul>
+
+<ul class="copyright">
+    
+    <li>Made with ♥ in </li>
+    <li>
+        <svg id="CO" width="40px" viewBox="0 0 168 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g fill-rule="nonzero">
+                    <rect id="Rectangle-path" fill="#424242" x="0" y="0" width="168" height="112"></rect>
+                    <rect id="Rectangle-path" fill="#FFFFFF" x="0" y="38" width="168" height="38"></rect>
+                    <path d="M105,69.8736338 C98.2937215,86.2891841 80.7803785,95.6976224 63.2262621,92.315131 C45.6721458,88.9326396 33,73.7077788 33,56 C33,38.2922212 45.6721458,23.0673604 63.2262621,19.684869 C80.7803785,16.3023776 98.2937215,25.7108159 105,42.1263662 L70.3632898,56 L105,69.8736338 Z" id="Shape" fill="#707070"></path>
+                    <ellipse id="Oval" fill="#D0D0D0" cx="70.5" cy="57" rx="18.5" ry="19"></ellipse>
+                </g>
+            </g>
+        </svg>
+    </li>
+    
+</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="./js/bundle.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-104998295-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src="//www.google-analytics.com/analytics.js"></script>
+
+</body>
+</html>
