@@ -23,7 +23,18 @@ module.exports = {
         hot: true
     },
     plugins: [
-        new CopyWebpackPlugin(['index.html']),
+        new CopyWebpackPlugin([
+            'index.html',
+            'about.html',
+            'showcase.html',
+            'favicon.ico',
+            { from: './images', to: 'images/' },
+            { from: './css', to: 'css/' },
+            { from: './js', to: 'js/' },
+            { from: './scripts', to: 'scripts/' },
+            { from: './styles', to: 'styles/' },
+            { from: './fonts', to: 'fonts/' }
+            ]),
         new webpack.HotModuleReplacementPlugin()
     ]
 };
